@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Home -->
     <url>
         <loc>https://luxuryflight.co.in/</loc>
         <lastmod>2025-11-30</lastmod>
@@ -8,11 +9,69 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Blog Page -->
     <url>
-        <loc>https://luxuryflight.co.in/blogemptyleg</loc>
+        <loc>https://luxuryflight.co.in/blogemptyleg.html</loc>
         <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Aircraft Pages -->
+    <url>
+        <loc>https://luxuryflight.co.in/cessnax1.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/falcon2000lx.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/falcon8x.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/gulfstreamg500.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/hawker800xp.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/kingairb200_1.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/learjet60xr_1.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luxuryflight.co.in/legacy600.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
     </url>
 
 </urlset>

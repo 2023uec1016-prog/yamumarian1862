@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon 8x – Luxe Aviation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
+    <style>
+        :root {
+            /* LUXE AVIATION DESIGN SYSTEM VARIABLES */
+            --bg-primary: #fffef2;
+            --bg-secondary: #f6f5e8;
+            --bg-subtle: #ebeade;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-light: #bcbbb4;
+            --border-light: #dcdcdc;
+            --border-medium: #c7c7c7;
+            --interactive-hover: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-primary);
+            font-family: "Inter", sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        .navigation-header {
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navigation-logo {
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            font-size: 14px;
+            padding: 12px 20px;
+            border: 1px solid #000;
+            background: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Hero */
+        .aircraft-hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            padding: 80px 0;
+        }
+
+        .aircraft-hero img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .aircraft-title {
+            font-size: 28px;
+            font-weight: 275;
+            line-height: 1.33;
+        }
+
+        .aircraft-subtitle {
+            font-size: 15px;
+            font-weight: 275;
+            line-height: 1.7;
+            margin-top: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Specs Section */
+        .specs-box {
+            background: #fff;
+            border: 1px solid var(--border-light);
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .specs-box h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px; 
+        }
+
+        .spec-item {
+            padding: 14px 12px;
+            border: 1px solid var(--border-light);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .spec-value {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        /* Gallery and Section Title Fix */
+        .gallery-section {
+            margin-top: 60px;
+        }
+        
+        /* FIX: Centralized style for major section titles */
+        .section-title {
+            font-size: 26px;
+            font-weight: 250;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .aircraft-hero {
+                grid-template-columns: 1fr;
+            }
+            .aircraft-hero img {
+                height: 320px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .navigation-header {
+                padding: 20px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navigation-header">
+        <a href="#" class="navigation-logo">Luxe Aviation</a>
+        <!-- Assuming index.html is your main card page -->
+        <button class="back-btn" onclick="window.location.href='index.html'">← Back to Main Page</button>
+    </nav>
+
+    <div class="container">
+
+        <!-- AIRCRAFT HERO SECTION: FALCON 8X -->
+        <section class="aircraft-hero">
+            <img src="https://i.postimg.cc/85WHBXD9/19-Falcon8X-Technology-Desktop.jpg" alt="Falcon 8x">
+
+            <div>
+                <h1 class="aircraft-title">Dassault Falcon 8x</h1>
+                <p class="aircraft-subtitle">The Falcon 8x is Dassault's flagship ultra-long-range jet, offering unmatched range, cabin quietness, and the flexibility to operate from short fields.</p>
+
+                <div class="specs-box">
+                    <h3>Key Specifications</h3>
+                    <div class="spec-grid">
+                        <div class="spec-item"><span class="spec-label">Passengers</span><span class="spec-value">12-16</span></div>
+                        <div class="spec-item"><span class="spec-label">Range</span><span class="spec-value">6,450 Nautical Miles</span></div>
+                        <div class="spec-item"><span class="spec-label">Cruise Speed</span><span class="spec-value">487 Knots</span></div>
+                        <div class="spec-item"><span class="spec-label">Cabin Height</span><span class="spec-value">6.17 ft</span></div>
+                        <div class="spec-item"><span class="spec-label">Cabin Width</span><span class="spec-value">7.67 ft</span></div>
+                        <div class="spec-item"><span class="spec-label">Luggage Capacity</span><span class="spec-value">140 cu ft</span></div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section">
+            <h2 class="section-title">Gallery</h2>
+
+            <div class="gallery-grid">
+                <!-- Placeholder images for gallery -->
+                <img src="https://placehold.co/600x400/f6f5e8/333333?text=Falcon+8x+Interior+1" alt="Falcon 8x Cabin">
+                <img src="https://placehold.co/600x400/f6f5e8/333333?text=Falcon+8x+Interior+2" alt="Falcon 8x Seats">
+                <img src="https://placehold.co/600x400/f6f5e8/333333?text=Falcon+8x+Cockpit" alt="Falcon 8x Cockpit">
+                <img src="https://placehold.co/600x400/f6f5e8/333333?text=Falcon+8x+Exterior+Detail" alt="Falcon 8x Detail">
+            </div>
+        </section>
+
+        <br><br>
+
+    </div>
+
+</body>
+</html>

@@ -1395,6 +1395,35 @@ icon.instagram {
         }
        
 }
+.explore-more-box {
+    width: 100%;
+    border: 1px solid var(--interactive-base);
+    padding: 45px 20px;         /* Matches Explore Fleet spacing */
+    background: transparent;    /* Same style */
+    margin: 40px 0;             /* Same vertical spacing */
+    display: flex;
+    justify-content: center;    /* Centers the button horizontally */
+    align-items: center;
+}
+
+.explore-more-btn {
+    /* Uses your existing .btn-primary, but we add enhancements */
+    font-size: 15px;
+    font-weight: 410;
+    padding: 12px 20px;
+    border-radius: 0;           /* Must match Explore Fleet exactly */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                   /* space before arrow */
+}
+
+.explore-more-btn:hover {
+    background: var(--interactive-base);
+    color: var(--background);   /* Matches your hover behavior */
+}
+
+
 
 
   
@@ -1410,14 +1439,17 @@ icon.instagram {
         <li><a href="#services" class="navigation-link">Services</a></li>
         <li><a href="#fleet" class="navigation-link">Fleet</a></li>
 
-        <!-- OLD (remove this)
-        <li><a href="#empty-legs" class="navigation-link">Empty Legs</a></li>
-        -->
-
-        <!-- NEW — links to your new empty-legs page -->
-        <li><a href="emptylegmain1.html" class="navigation-link">Empty Legs</a></li>
+        <!-- Updated Empty Legs link -->
+        <li>
+            <a href="#"
+               class="navigation-link"
+               onclick="event.preventDefault(); window.location.href='empty-legs.html';">
+               Empty Legs
+            </a>
+        </li>
     </ul>
 </nav>
+
 
 
         <div class="navigation-utilities">
@@ -1853,6 +1885,12 @@ icon.instagram {
                 </p>
             </div>
             
+            
+       
+
+            
+
+            
              <div class="empty-legs-grid">
                 <div class="empty-leg-card">
                     <div class="empty-leg-image">
@@ -1897,6 +1935,9 @@ icon.instagram {
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
+                        <button class="btn-secondary" onclick="window.location.href='empty-legs.html'">
+    More Deals
+</button>
                     </div>
                 </div>
 
@@ -1944,6 +1985,9 @@ icon.instagram {
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
+                        <button class="btn-secondary" onclick="window.location.href='empty-legs.html'">
+    More Deals
+</button>
                     </div>
                 </div>
 
@@ -1990,6 +2034,9 @@ icon.instagram {
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
+                        <button class="btn-secondary" onclick="window.location.href='empty-legs.html'">
+    More Deals
+</button>
                     </div>
                 </div>
                 
@@ -2172,8 +2219,18 @@ icon.instagram {
         </div>
 
     </div>
+   
+</div>
+
 </div>
 <main>
+   <section class="explore-more-box">
+    <a href="empty-legs.html" class="btn-primary explore-more-btn">
+        More Empty Leg Deals →
+    </a>
+</section>
+
+
 
     <!-- REAL BLOG SECTION START -->
     <section id="blog">

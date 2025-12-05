@@ -48,7 +48,7 @@
 
         /* HEADER */
         .navigation-header {
-            background: #fffef2;
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border-light);
             padding: 20px 40px;
             display: flex;
@@ -60,8 +60,8 @@
         }
 
         .navigation-logo {
-            font-size: 26px;
-            font-weight: 415;
+            font-size: 22px;
+            font-weight: 500;
             text-decoration: none;
             color: var(--interactive-base);
         }
@@ -90,8 +90,8 @@
             text-align: center;
         }
         .page-title {
-            font-size: 35px;
-            font-weight: 400;
+            font-size: 28px;
+            font-weight: 360;
             margin-bottom: 10px;
         }
         .page-subtitle { font-size: 18px; color: var(--text-secondary); }
@@ -183,25 +183,7 @@
             font-size: 14px;
         }
 
-        /* CTA SECTION */
-        .contact-cta {
-            background: var(--bg-secondary);
-            padding: 80px 40px;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .contact-cta-title {
-            font-size: 30px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .contact-links-group {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
+       
 
         /* FOOTER */
         footer {
@@ -319,55 +301,55 @@
         font-size: 16px;
     }
 }
-    /* SOCIAL SIDEBAR – MATCH MAIN PAGE STYLE */
-.social-sidebar {
-    position: fixed;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    z-index: 200;
+    .left-fixed-icons {
+  position: fixed;
+  top: 40%;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999999;
 }
 
-/* Each icon = circular white button */
-.social-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+.left-fixed-icons .icon {
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s cubic-bezier(.4,0,.2,1);
+  text-decoration: none;
 }
 
-.social-icon img {
-    width: 22px;
-    height: 22px;
-    display: block;
+.icon.whatsapp {
+  color: #25D366;
 }
 
-/* Hover effect */
-.social-icon:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+.icon.youtube {
+  color: #FF0000;
 }
 
-/* ✅ Make sure it also shows on mobile */
-@media (max-width: 768px) {
-    .social-sidebar {
-        top: auto;
-        bottom: 20px;
-        left: 16px;
-        transform: none;
-        flex-direction: row;
-    }
+icon.instagram {
+  color: #E1306C;
+}
+.left-fixed-icons .icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+/* FIX: Remove bold from all empty-leg card titles */
+.deal-card h2 {
+    font-weight: 405 !important;
+    font-size: 21px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
 }
 
-        
  
 
 
@@ -379,20 +361,23 @@
 </head>
 
 <body>
- <!-- Social Media Sidebar (Left Middle) -->
-<div class="social-sidebar">
-    <a href="https://wa.me/917209121304" target="_blank" class="social-icon" aria-label="Chat on WhatsApp">
-        <img src="https://i.postimg.cc/13t5D1BX/whatsapp.png" alt="WhatsApp">
-    </a>
+     </div>
+                <div class="left-fixed-icons">
+  <a href="https://wa.me/917209121304" class="icon whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <a href="https://instagram.com/luxe.aviation" target="_blank" class="social-icon" aria-label="Visit Instagram">
-        <img src="https://i.postimg.cc/4NDZ06M7/instagram.png" alt="Instagram">
-    </a>
-
-    <a href="https://youtube.com/@luxeaviation" target="_blank" class="social-icon" aria-label="Visit YouTube">
-        <img src="https://i.postimg.cc/zfFfN4Bw/youtube.png" alt="YouTube">
-    </a>
+  <a href="https://youtube.com/@LuxeWingsAviation" class="icon youtube" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  <a href="https://instagram.com/luxe.aviation" class="icon instagram" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
 </div>
+
+
 
     <!-- HEADER -->
     <header class="navigation-header">

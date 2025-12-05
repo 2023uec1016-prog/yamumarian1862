@@ -82,22 +82,7 @@
             color: white;
         }
 
-        /* SOCIAL SIDEBAR */
-        .social-sidebar {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 20;
-        }
-        .social-icon {
-            font-size: 24px;
-            color: var(--text-light);
-        }
-        .social-icon:hover { color: var(--interactive-base); }
+       
 
         /* PAGE HEADER */
         .page-header-content {
@@ -334,14 +319,56 @@
         font-size: 16px;
     }
 }
-    /* SOCIAL SIDEBAR (MATCHES HOMEPAGE STYLE) */
+    /* SOCIAL SIDEBAR – MATCH MAIN PAGE STYLE */
 .social-sidebar {
     position: fixed;
-    left: 15px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    gap: 14px;
+    z-index: 200;
+}
+
+/* Each icon = circular white button */
+.social-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Hover effect */
+.social-icon:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* ✅ Make sure it also shows on mobile */
+@media (max-width: 768px) {
+    .social-sidebar {
+        top: auto;
+        bottom: 20px;
+        left: 16px;
+        transform: none;
+        flex-direction: row;
+    }
+}
+
+        
+ 
 
 
         
@@ -352,28 +379,20 @@
 </head>
 
 <body>
-    <!-- Social Media Sidebar (Left Middle) -->
+ <!-- Social Media Sidebar (Left Middle) -->
 <div class="social-sidebar">
-    <a href="https://wa.me/917209121304" target="_blank" class="social-icon">
+    <a href="https://wa.me/917209121304" target="_blank" class="social-icon" aria-label="Chat on WhatsApp">
         <img src="https://i.postimg.cc/13t5D1BX/whatsapp.png" alt="WhatsApp">
     </a>
 
-    <a href="https://instagram.com/luxuryspace01" target="_blank" class="social-icon">
+    <a href="https://instagram.com/luxe.aviation" target="_blank" class="social-icon" aria-label="Visit Instagram">
         <img src="https://i.postimg.cc/4NDZ06M7/instagram.png" alt="Instagram">
     </a>
 
-    <a href="https://youtube.com/@luxeaviation" target="_blank" class="social-icon">
+    <a href="https://youtube.com/@luxeaviation" target="_blank" class="social-icon" aria-label="Visit YouTube">
         <img src="https://i.postimg.cc/zfFfN4Bw/youtube.png" alt="YouTube">
     </a>
 </div>
-
-
-    <!-- SOCIAL BAR -->
-    <div class="social-sidebar">
-        <a class="social-icon"><i class="fab fa-whatsapp"></i></a>
-        <a class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a class="social-icon"><i class="fab fa-youtube"></i></a>
-    </div>
 
     <!-- HEADER -->
     <header class="navigation-header">

@@ -4,64 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empty Leg Deals | Luxe Aviation</title>
-    <!-- Font Awesome for Social Icons -->
+
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- Combined CSS using the Warm Neutral Palette -->
+
+    <!-- ======================= CSS ======================= -->
     <style>
-        /* CSS Variables - Warm Neutral Palette (Adjusted based on previous steps) */
         :root {
-            /* Primary Backgrounds - Warm foundation */
             --bg-primary: #fffef2;
             --bg-secondary: #f6f5e8;
             --bg-subtle: #ebeade;
-            
-            /* Text Hierarchy - Rich contrast */
-            --text-primary: #333333;
-            --text-secondary: #666666;
-            --text-light: #bcbbb4; /* Used for subtle social icons */
+
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-light: #bcbbb4;
             --text-meta: #4a4a4a;
-            
-            /* Interactive States - Minimal emphasis */
-            --interactive-base: #333333;
-            --interactive-hover: #000000;
-            --focus-outline: #252525;
-            
-            /* Borders & Separators */
+
+            --interactive-base: #333;
+            --interactive-hover: #000;
+
             --border-light: #bcbbb4;
-            --border-medium: #cccccc;
+            --border-medium: #ccc;
             --border-subtle: rgba(51,51,51,0.2);
 
-            /* Custom for Price Highlight */
-            --price-highlight: #8BC34A; /* Soft Light Green */
+            --price-highlight: #8BC34A;
         }
 
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* RESET */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             background: var(--bg-primary);
             color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
 
-        /* --- Global Components & Typography --- */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
         }
-        
-        /* Navigation Header */
+
+        /* HEADER */
         .navigation-header {
-            background: var(--bg-primary);
+            background: #fffef2;
             border-bottom: 1px solid var(--border-light);
             padding: 20px 40px;
             display: flex;
@@ -69,97 +56,90 @@
             justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 10;
         }
 
         .navigation-logo {
             font-size: 26px;
             font-weight: 415;
-            color: var(--text-primary);
             text-decoration: none;
-            text-transform: none; /* Ensure logo is not forced to uppercase */
+            color: var(--interactive-base);
         }
 
         .btn-primary {
             background: transparent;
-            color: var(--interactive-base);
             border: 1px solid var(--interactive-base);
-            border-radius: 0px;
-            padding: 12px 20px; 
+            color: var(--interactive-base);
+            padding: 12px 20px;
             font-size: 14px;
             font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: auto;
-            text-transform: none; /* Ensure button text is not uppercase */
+            transition: 0.2s;
         }
 
         .btn-primary:hover {
             background: var(--interactive-base);
-            color: var(--bg-primary);
-        }
-        
-        /* --- Page Layout & Headers --- */
-        .page-header-content {
-            padding: 60px 0 40px 0;
-            text-align: center;
+            color: white;
         }
 
+        /* SOCIAL SIDEBAR */
+        .social-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 20;
+        }
+        .social-icon {
+            font-size: 24px;
+            color: var(--text-light);
+        }
+        .social-icon:hover { color: var(--interactive-base); }
+
+        /* PAGE HEADER */
+        .page-header-content {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
         .page-title {
             font-size: 35px;
             font-weight: 400;
             margin-bottom: 10px;
-            letter-spacing: 1px;
-            text-transform: none; /* Changed: Not uppercase */
         }
-        
-        .page-subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-        }
+        .page-subtitle { font-size: 18px; color: var(--text-secondary); }
 
-        /* Filter Bar */
+        /* FILTER BAR */
         .filter-bar {
             display: flex;
-            flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
-            margin-bottom: 60px;
+            flex-wrap: wrap;
             padding: 20px;
-            background-color: var(--bg-secondary);
+            background: var(--bg-secondary);
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
+            margin-bottom: 60px;
         }
 
-        .filter-bar input, .filter-bar select, .filter-bar button {
+        .filter-bar input,
+        .filter-bar button {
             padding: 10px 15px;
             border: 1px solid var(--border-medium);
-            border-radius: 0px;
-            font-size: 14px;
             background: white;
-            color: var(--text-primary);
-        }
-        .filter-bar input, .filter-bar select {
-            flex-grow: 1;
-            max-width: 250px;
-        }
-        .filter-bar button {
-            background: var(--interactive-base);
-            color: var(--bg-primary);
-            cursor: pointer;
-            transition: background-color 0.2s;
-            font-weight: 600;
-            text-transform: none; /* Ensure filter button text is not uppercase */
-        }
-        .filter-bar button:hover {
-            background: var(--interactive-hover);
+            font-size: 14px;
+            width: 250px;
         }
 
-        /* Deals Grid (Two Columns) */
+        .filter-bar button {
+            background: var(--interactive-base);
+            color: white;
+            cursor: pointer;
+        }
+
+        /* DEAL GRID */
         .deals-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -167,23 +147,22 @@
             margin-bottom: 80px;
         }
 
-        /* Empty Leg Card Design */
+        /* DEAL CARD (PREMIUM DESIGN) */
         .deal-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: var(--text-primary);
             display: flex;
             flex-direction: column;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: 0.2s;
         }
-        
+
         .deal-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        
+
         .card-image {
             width: 100%;
             height: 200px;
@@ -193,579 +172,455 @@
 
         .card-content {
             padding: 25px;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- Pricing and Link Styling --- */
         .pricing-section {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-top: 20px;
             padding-top: 15px;
+            margin-top: 20px;
             border-top: 1px solid var(--border-subtle);
         }
-        
+
         .savings-highlight {
             font-size: 18px;
             font-weight: 600;
             color: var(--price-highlight);
-            display: block;
-            line-height: 1;
         }
 
         .enquire-btn-card {
-            /* Styles for a simple text link */
-            padding: 0;
-            background: none;
+            text-decoration: underline;
             color: var(--interactive-base);
-            border: none;
-            text-decoration: underline; /* Emphasize it's a link */
-            font-weight: 400;
+            pointer-events: none;
             font-size: 14px;
-            cursor: pointer;
-            text-transform: none; /* Ensure text is not uppercase */
-            pointer-events: none; /* The parent <a> handles the click */
         }
 
-        /* --- Social Sidebar --- */
-        .social-sidebar {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 200;
-            padding: 10px;
-            border-right: 1px solid var(--border-light);
-        }
-        .social-icon {
-            font-size: 24px;
-            color: var(--text-light); /* Subtle color */
-            transition: color 0.2s;
-        }
-        .social-icon:hover {
-            color: var(--interactive-base); /* Darker on hover */
-        }
-        /* --- NEW: Contact / CTA Section Design --- */
+        /* CTA SECTION */
         .contact-cta {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            background: var(--bg-secondary);
             padding: 80px 40px;
-            text-align: center;
-            margin-top: 40px; 
+            border-top: 1px solid var(--border-light);
         }
+
         .contact-cta-title {
             font-size: 30px;
-            font-weight: 400;
             margin-bottom: 15px;
-            color: var(--interactive-base);
-            text-transform: none;
+            text-align: center;
         }
-        .contact-cta-info {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-        }
+
         .contact-links-group {
-            margin-bottom: 30px;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: 40px;
+            text-align: center;
         }
-        .contact-link i {
-            margin-right: 8px;
-            color: var(--interactive-base);
-        }
-        
-        /* Responsive Adjustments */
+
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .container {
-                padding: 0 24px;
-            }
-            .deals-grid {
-                grid-template-columns: 1fr;
-            }
-            .social-sidebar {
-                /* Hide sidebar on small mobile screens to save space */
-                display: none; 
-            }
-        }
-        @media (max-width: 640px) {
-            .page-title {
-                font-size: 28px;
-            }
-            .filter-bar input, .filter-bar select, .filter-bar button {
-                max-width: none;
-                width: 100%;
-            }
+            .deals-grid { grid-template-columns: 1fr; }
+            .social-sidebar { display: none; }
         }
     </style>
 </head>
+
 <body>
-    
-  
-         <!-- Social Media Sidebar (Left Middle) -->
+
+    <!-- SOCIAL BAR -->
     <div class="social-sidebar">
-        <a href="https://wa.me/yournumber" target="_blank" class="social-icon" title="WhatsApp Us">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://instagram.com/yourhandle" target="_blank" class="social-icon" title="Follow us on Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon" title="Watch our YouTube Channel">
-            <i class="fab fa-youtube"></i>
-        </a>
+        <a class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a class="social-icon"><i class="fab fa-youtube"></i></a>
     </div>
 
-    <!-- Header & Navigation -->
+    <!-- HEADER -->
     <header class="navigation-header">
         <a href="/" class="navigation-logo">Luxe Aviation</a>
         <a href="/" class="btn-primary">Back to Main Page</a>
     </header>
 
     <main class="container">
-        
+
+        <!-- PAGE HEADER -->
         <div class="page-header-content">
             <h1 class="page-title">Empty Leg Deals</h1>
-            <p class="page-subtitle">Curated one-way charters offering unparalleled savings on private jet travel.</p>
+            <p class="page-subtitle">Curated one-way charters offering unparalleled savings.</p>
         </div>
 
-        <!-- Filter Bar (Now connected to JS for functionality, Aircraft Type removed) -->
+        <!-- FILTER BAR -->
         <div class="filter-bar">
-            <input type="text" id="departure-filter" placeholder="Departure City or Code (e.g., LHR, London)">
-            <input type="text" id="arrival-filter" placeholder="Arrival City or Code (e.g., TEB, Teterboro)">
-            <input type="date" id="date-filter">
-            <!-- Aircraft Type Select Removed -->
+            <input id="departure-filter" placeholder="Departure City or Code">
+            <input id="arrival-filter" placeholder="Arrival City or Code">
+            <input id="date-filter" type="date">
             <button onclick="filterDeals()">Apply Filters</button>
-            <button onclick="resetFilters()" class="btn-primary" style="background: none; color: var(--text-secondary); border: 1px solid var(--border-light);">Reset</button>
+            <button onclick="resetFilters()">Reset</button>
         </div>
 
-        <!-- Deals Grid (Content rendered by JavaScript) -->
-        <div class="deals-grid" id="deals-grid">
-            <!-- Deal Cards will be injected here by JavaScript -->
-            <p class="no-results" style="display: none;">No Empty Leg deals match your criteria. Please try broadening your search.</p>
-        </div>
+        <!-- DEALS GRID -->
+        <div class="deals-grid" id="deals-grid"></div>
+
     </main>
 
-    <!-- Contact/CTA Section -->
+    <!-- CONTACT CTA -->
     <section class="contact-cta">
         <h2 class="contact-cta-title">Ready to Book Your Empty Leg?</h2>
-        <p class="contact-cta-info">
-            Contact our empty leg charter team 24/7 for immediate assistance.
-        </p>
         <div class="contact-links-group">
-            <a href="tel:+917209121304" class="contact-link">
-                <i class="fas fa-phone"></i> +917209121304
-            </a>
-            <a href="mailto:charter@luxeaviation.com" class="contact-link">
-                <i class="fas fa-envelope"></i> luxe.wings1@gmail.com
-            </a>
+            <a href="tel:+917209121304"><i class="fas fa-phone"></i> +917209121304</a>
+            <a href="mailto:luxe.wings1@gmail.com"><i class="fas fa-envelope"></i> luxe.wings1@gmail.com</a>
         </div>
-        <!-- Link to a general inquiry page or form -->
-        <a href="#top" class="btn-primary">
-            Inquire About Custom Charter
-        </a>
+        <center><a class="btn-primary" href="#">Inquire About Custom Charter</a></center>
     </section>
 
-    <!-- Footer -->
-    <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); padding: 40px; text-align: center;">
-        <p class="body-small" style="color: var(--text-secondary);">
-            &copy; 2025 Luxe Aviation. All Rights Reserved. | Empty Leg Deals are subject to availability.
-        </p>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Luxe Aviation. All Rights Reserved.</p>
     </footer>
 
+    <!-- ======================= JAVASCRIPT ======================= -->
     <script>
-        // --- DEAL DATA ARRAY ---
-        // This array holds all the necessary data for rendering and filtering.
-        const allDeals = [
-            {
-                id: 1,
-                origin: "London",
-                originCode: "LHR",
-                destination: "Teterboro",
-                destinationCode: "TEB",
-                aircraft: "Gulfstream G650",
-                aircraftType: "Heavy", // Data remains, but filter is removed
-                passengers: 12,
-                date: "2025-12-15", // YYYY-MM-DD for comparison
-                time: "14:00 GMT",
-                savings: "$30,000",
-                priceDisplay: "Fixed Price",
-                description: "Rare transatlantic empty leg on the ultra-long-range Gulfstream G650. Perfect for high-speed, discounted private charter to the New York area.",
-                link: "london-to-teterboro-g650.html",
-                image: "https://i.postimg.cc/rmzcwKrf/Snap_Insta_to_576084025_18515730580064496_5475077991110328965_n.jpg"
-            },
-            {
-                id: 2,
-                origin: "Paris",
-                originCode: "CDG",
-                destination: "Dubai",
-                destinationCode: "DXB",
-                aircraft: "Bombardier Global Express",
-                aircraftType: "Heavy",
-                passengers: 14,
-                date: "2025-12-18",
-                time: "09:30 CET",
-                savings: "$35,000",
-                priceDisplay: "Fixed Price:",
-                description: "Luxurious Global Express repositioning flight available for a fixed price. Ideal for business travel or Dubai holiday charters.",
-                link: "paris-to-dubai-global-express.html",
-                image: "https://i.postimg.cc/WpK65Cp9/vecteezy_interior_of_luxurious_private_jet_illustration_23460772.jpg"
-            },
-            {
-                id: 3,
-                origin: "Miami",
-                originCode: "MIA",
-                destination: "Aspen",
-                destinationCode: "ASE",
-                aircraft: "Challenger 350",
-                aircraftType: "Super Midsize",
-                passengers: 8,
-                date: "2025-12-22",
-                time: "11:00 EST",
-                savings: "$25,000",
-                priceDisplay: "Fixed Cost:",
-                description: "Last-minute midsize jet empty leg to the Colorado Rockies. Perfect for ski trips with discounted Challenger 350 charter rate.",
-                link: "miami-to-aspen-challenger-350.html",
-                image: "https://i.postimg.cc/ZK80rnV5/Snap_Insta_to_350479627_724367049377438_300223510234876783_n.jpg"
-            },
-            {
-                id: 4,
-                origin: "Hong Kong",
-                originCode: "HKG",
-                destination: "Singapore",
-                destinationCode: "SIN",
-                aircraft: "Dassault Falcon 7X",
-                aircraftType: "Heavy",
-                passengers: 10,
-                date: "2026-01-05",
-                time: "16:00 HKT",
-                savings: "€28,000",
-                priceDisplay: "Fixed Price:",
-                description: "Fixed price empty sector on the popular Dassault Falcon 7X. Secure your discounted Asia Pacific private flight now.",
-                link: "hong-kong-to-singapore-falcon-7x.html",
-                image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-            },
-            {
-    id: 5,
-    origin: "New York",
-    originCode: "NYC",
-    destination: "Boston",
-    destinationCode: "BOS",
-    aircraft: "Gulfstream G450",
-    aircraftType: "Heavy",
-    passengers: 12,
-    date: "2025-12-04",
-    time: "15:40",
-    savings: "$5,500",
-    priceDisplay: "Fixed Price:",
-    description: "Special empty leg on the Gulfstream G450 from New York to Boston. Limited-time discounted charter deal.",
-    link: "new-york-to-boston-g450-dec4-340pm.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 6,
-    origin: "New York",
-    originCode: "NYC",
-    destination: "Washington DC",
-    destinationCode: "IAD",
-    aircraft: "Gulfstream G450",
-    aircraftType: "Heavy",
-    passengers: 12,
-    date: "2025-12-05",
-    time: "09:00",
-    savings: "$5,500",
-    priceDisplay: "Fixed Price:",
-    description: "Premium empty leg sector on Gulfstream G450. Morning departure from NYC to Washington DC.",
-    link: "new-york-to-washington-g450-dec5-9am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 7,
-    origin: "Columbus",
-    originCode: "CMH",
-    destination: "New York",
-    destinationCode: "NYC",
-    aircraft: "Challenger 300",
-    aircraftType: "Super Mid",
-    passengers: 9,
-    date: "2025-12-04",
-    time: "19:00",
-    savings: "$6,750",
-    priceDisplay: "Fixed Price:",
-    description: "Evening empty leg departure on Challenger 300 from Columbus to New York. Book your discount flight.",
-    link: "columbus-to-new-york-challenger300-dec4-7pm.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 8,
-    origin: "New York",
-    originCode: "NYC",
-    destination: "Boston",
-    destinationCode: "BOS",
-    aircraft: "Challenger 300",
-    aircraftType: "Super Mid",
-    passengers: 9,
-    date: "2025-12-04",
-    time: "14:35",
-    savings: "$4,500",
-    priceDisplay: "Fixed Price:",
-    description: "Afternoon super mid empty leg sector from New York to Boston on Challenger 300.",
-    link: "new-york-to-boston-challenger300-dec4-235pm.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 9,
-    origin: "New York",
-    originCode: "NYC",
-    destination: "Nantucket",
-    destinationCode: "ACK",
-    aircraft: "Citation Excel",
-    aircraftType: "Mid Size",
-    passengers: 8,
-    date: "2025-12-05",
-    time: "14:05",
-    savings: "$3,000",
-    priceDisplay: "Fixed Price:",
-    description: "Mid-size jet empty leg from NYC to Nantucket on Citation Excel. Great short-hop deal.",
-    link: "new-york-to-nantucket-excel-dec5-205pm.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 10,
-    origin: "New York",
-    originCode: "NYC",
-    destination: "Washington DC",
-    destinationCode: "IAD",
-    aircraft: "Citation Excel",
-    aircraftType: "Mid Size",
-    passengers: 8,
-    date: "2025-12-05",
-    time: "11:50",
-    savings: "$3,250",
-    priceDisplay: "Fixed Price:",
-    description: "Mid-size aircraft empty leg from New York to Washington DC on Citation Excel. Book now.",
-    link: "new-york-to-washington-excel-dec5-1150am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 11,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Singapore",
-    destinationCode: "SIN",
-    aircraft: "Global 7500",
-    aircraftType: "Heavy",
-    passengers: 19,
-    date: "2025-12-06",
-    time: "09:00",
-    savings: "$75,254",
-    priceDisplay: "Fixed Price:",
-    description: "Exclusive empty leg from Dubai to Singapore on the Global 7500. Book now and secure a premium discounted long-haul flight.",
-    link: "dubai-to-singapore-global7500-dec6-9am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 12,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Hong Kong",
-    destinationCode: "HKG",
-    aircraft: "Global 7500",
-    aircraftType: "Heavy",
-    passengers: 19,
-    date: "2025-12-07",
-    time: "09:00",
-    savings: "$82,247",
-    priceDisplay: "Fixed Price:",
-    description: "Premium empty leg on the Global 7500 from Dubai to Hong Kong. Enjoy luxury long-haul charter savings.",
-    link: "dubai-to-hong-kong-global7500-dec7-9am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 13,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Seoul",
-    destinationCode: "ICN",
-    aircraft: "Global 7500",
-    aircraftType: "Heavy",
-    passengers: 19,
-    date: "2025-12-05",
-    time: "08:00",
-    savings: "$92,747",
-    priceDisplay: "Fixed Price:",
-    description: "Exclusive empty leg on the Global 7500 from Dubai to Seoul. Limited-availability discounted long-haul sector.",
-    link: "dubai-to-seoul-global7500-dec5-8am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 14,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Cairo",
-    destinationCode: "CAI",
-    aircraft: "Challenger 350",
-    aircraftType: "Super Mid",
-    passengers: 9,
-    date: "2025-12-06",
-    time: "08:40",
-    savings: "$17,724",
-    priceDisplay: "Fixed Price:",
-    description: "Super mid-size Challenger 350 empty leg from Dubai to Cairo at a special discounted charter rate.",
-    link: "dubai-to-cairo-challenger350-dec6-840am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 15,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Bangalore",
-    destinationCode: "BLR",
-    aircraft: "Legacy 650",
-    aircraftType: "Heavy",
-    passengers: 13,
-    date: "2025-12-06",
-    time: "06:30",
-    savings: "$20,696",
-    priceDisplay: "Fixed Price:",
-    description: "Empty leg on Legacy 650 from Dubai to Bangalore. A popular discounted sector on a heavy jet.",
-    link: "dubai-to-bangalore-legacy650-dec6-630am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-},
-{
-    id: 16,
-    origin: "Dubai",
-    originCode: "DXB",
-    destination: "Athens",
-    destinationCode: "ATH",
-    aircraft: "Legacy 650",
-    aircraftType: "Heavy",
-    passengers: 13,
-    date: "2025-12-06",
-    time: "08:10",
-    savings: "$27,909",
-    priceDisplay: "Fixed Price:",
-    description: "Legacy 650 empty leg from Dubai to Athens. Discounted heavy jet repositioning sector.",
-    link: "dubai-to-athens-legacy650-dec6-810am.html",
-    image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
-}
+
+      const allDeals = [
+    {
+        id: 1,
+        origin: "London",
+        originCode: "LHR",
+        destination: "Teterboro",
+        destinationCode: "TEB",
+        aircraft: "Gulfstream G650",
+        aircraftType: "Heavy",
+        passengers: 12,
+        date: "2025-12-15",
+        time: "14:00 GMT",
+        savings: "$30,000",
+        priceDisplay: "Fixed Price",
+        description: "Rare transatlantic empty leg on the ultra-long-range Gulfstream G650. Perfect for high-speed, discounted private charter to the New York area.",
+        link: "london-to-teterboro-g650.html",
+        image: "https://i.postimg.cc/rmzcwKrf/Snap_Insta_to_576084025_18515730580064496_5475077991110328965_n.jpg"
+    },
+    {
+        id: 2,
+        origin: "Paris",
+        originCode: "CDG",
+        destination: "Dubai",
+        destinationCode: "DXB",
+        aircraft: "Bombardier Global Express",
+        aircraftType: "Heavy",
+        passengers: 14,
+        date: "2025-12-18",
+        time: "09:30 CET",
+        savings: "$35,000",
+        priceDisplay: "Fixed Price:",
+        description: "Luxurious Global Express repositioning flight available for a fixed price. Ideal for business travel or Dubai holiday charters.",
+        link: "paris-to-dubai-global-express.html",
+        image: "https://i.postimg.cc/WpK65Cp9/vecteezy_interior_of_luxurious_private_jet_illustration_23460772.jpg"
+    },
+    {
+        id: 3,
+        origin: "Miami",
+        originCode: "MIA",
+        destination: "Aspen",
+        destinationCode: "ASE",
+        aircraft: "Challenger 350",
+        aircraftType: "Super Midsize",
+        passengers: 8,
+        date: "2025-12-22",
+        time: "11:00 EST",
+        savings: "$25,000",
+        priceDisplay: "Fixed Cost:",
+        description: "Last-minute midsize jet empty leg to the Colorado Rockies. Perfect for ski trips with discounted Challenger 350 charter rate.",
+        link: "miami-to-aspen-challenger-350.html",
+        image: "https://i.postimg.cc/ZK80rnV5/Snap_Insta_to_350479627_724367049377438_300223510234876783_n.jpg"
+    },
+    {
+        id: 4,
+        origin: "Hong Kong",
+        originCode: "HKG",
+        destination: "Singapore",
+        destinationCode: "SIN",
+        aircraft: "Dassault Falcon 7X",
+        aircraftType: "Heavy",
+        passengers: 10,
+        date: "2026-01-05",
+        time: "16:00 HKT",
+        savings: "€28,000",
+        priceDisplay: "Fixed Price:",
+        description: "Fixed price empty sector on the popular Dassault Falcon 7X. Secure your discounted Asia Pacific private flight now.",
+        link: "hong-kong-to-singapore-falcon-7x.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 5,
+        origin: "New York",
+        originCode: "NYC",
+        destination: "Boston",
+        destinationCode: "BOS",
+        aircraft: "Gulfstream G450",
+        aircraftType: "Heavy",
+        passengers: 12,
+        date: "2025-12-04",
+        time: "15:40",
+        savings: "$5,500",
+        priceDisplay: "Fixed Price:",
+        description: "Special empty leg on the Gulfstream G450 from New York to Boston. Limited-time discounted charter deal.",
+        link: "new-york-to-boston-g450-dec4-340pm.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 6,
+        origin: "New York",
+        originCode: "NYC",
+        destination: "Washington DC",
+        destinationCode: "IAD",
+        aircraft: "Gulfstream G450",
+        aircraftType: "Heavy",
+        passengers: 12,
+        date: "2025-12-05",
+        time: "09:00",
+        savings: "$5,500",
+        priceDisplay: "Fixed Price:",
+        description: "Premium empty leg sector on Gulfstream G450. Morning departure from NYC to Washington DC.",
+        link: "new-york-to-washington-g450-dec5-9am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 7,
+        origin: "Columbus",
+        originCode: "CMH",
+        destination: "New York",
+        destinationCode: "NYC",
+        aircraft: "Challenger 300",
+        aircraftType: "Super Mid",
+        passengers: 9,
+        date: "2025-12-04",
+        time: "19:00",
+        savings: "$6,750",
+        priceDisplay: "Fixed Price:",
+        description: "Evening empty leg departure on Challenger 300 from Columbus to New York. Book your discount flight.",
+        link: "columbus-to-new-york-challenger300-dec4-7pm.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 8,
+        origin: "New York",
+        originCode: "NYC",
+        destination: "Boston",
+        destinationCode: "BOS",
+        aircraft: "Challenger 300",
+        aircraftType: "Super Mid",
+        passengers: 9,
+        date: "2025-12-04",
+        time: "14:35",
+        savings: "$4,500",
+        priceDisplay: "Fixed Price:",
+        description: "Afternoon super mid empty leg sector from New York to Boston on Challenger 300.",
+        link: "new-york-to-boston-challenger300-dec4-235pm.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 9,
+        origin: "New York",
+        originCode: "NYC",
+        destination: "Nantucket",
+        destinationCode: "ACK",
+        aircraft: "Citation Excel",
+        aircraftType: "Mid Size",
+        passengers: 8,
+        date: "2025-12-05",
+        time: "14:05",
+        savings: "$3,000",
+        priceDisplay: "Fixed Price:",
+        description: "Mid-size jet empty leg from NYC to Nantucket on Citation Excel. Great short-hop deal.",
+        link: "new-york-to-nantucket-excel-dec5-205pm.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 10,
+        origin: "New York",
+        originCode: "NYC",
+        destination: "Washington DC",
+        destinationCode: "IAD",
+        aircraft: "Citation Excel",
+        aircraftType: "Mid Size",
+        passengers: 8,
+        date: "2025-12-05",
+        time: "11:50",
+        savings: "$3,250",
+        priceDisplay: "Fixed Price:",
+        description: "Mid-size aircraft empty leg from New York to Washington DC on Citation Excel. Book now.",
+        link: "new-york-to-washington-excel-dec5-1150am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 11,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Singapore",
+        destinationCode: "SIN",
+        aircraft: "Global 7500",
+        aircraftType: "Heavy",
+        passengers: 19,
+        date: "2025-12-06",
+        time: "09:00",
+        savings: "$75,254",
+        priceDisplay: "Fixed Price:",
+        description: "Exclusive empty leg from Dubai to Singapore on the Global 7500. Book now and secure a premium discounted long-haul flight.",
+        link: "dubai-to-singapore-global7500-dec6-9am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 12,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Hong Kong",
+        destinationCode: "HKG",
+        aircraft: "Global 7500",
+        aircraftType: "Heavy",
+        passengers: 19,
+        date: "2025-12-07",
+        time: "09:00",
+        savings: "$82,247",
+        priceDisplay: "Fixed Price:",
+        description: "Premium empty leg on the Global 7500 from Dubai to Hong Kong. Enjoy luxury long-haul charter savings.",
+        link: "dubai-to-hong-kong-global7500-dec7-9am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 13,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Seoul",
+        destinationCode: "ICN",
+        aircraft: "Global 7500",
+        aircraftType: "Heavy",
+        passengers: 19,
+        date: "2025-12-05",
+        time: "08:00",
+        savings: "$92,747",
+        priceDisplay: "Fixed Price:",
+        description: "Exclusive empty leg on the Global 7500 from Dubai to Seoul. Limited-availability discounted long-haul sector.",
+        link: "dubai-to-seoul-global7500-dec5-8am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 14,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Cairo",
+        destinationCode: "CAI",
+        aircraft: "Challenger 350",
+        aircraftType: "Super Mid",
+        passengers: 9,
+        date: "2025-12-06",
+        time: "08:40",
+        savings: "$17,724",
+        priceDisplay: "Fixed Price:",
+        description: "Super mid-size Challenger 350 empty leg from Dubai to Cairo at a special discounted charter rate.",
+        link: "dubai-to-cairo-challenger350-dec6-840am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 15,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Bangalore",
+        destinationCode: "BLR",
+        aircraft: "Legacy 650",
+        aircraftType: "Heavy",
+        passengers: 13,
+        date: "2025-12-06",
+        time: "06:30",
+        savings: "$20,696",
+        priceDisplay: "Fixed Price:",
+        description: "Empty leg on Legacy 650 from Dubai to Bangalore. A popular discounted sector on a heavy jet.",
+        link: "dubai-to-bangalore-legacy650-dec6-630am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    },
+    {
+        id: 16,
+        origin: "Dubai",
+        originCode: "DXB",
+        destination: "Athens",
+        destinationCode: "ATH",
+        aircraft: "Legacy 650",
+        aircraftType: "Heavy",
+        passengers: 13,
+        date: "2025-12-06",
+        time: "08:10",
+        savings: "$27,909",
+        priceDisplay: "Fixed Price:",
+        description: "Legacy 650 empty leg from Dubai to Athens. Discounted heavy jet repositioning sector.",
+        link: "dubai-to-athens-legacy650-dec6-810am.html",
+        image: "https://i.postimg.cc/R0BDH22X/embraer_legacy_600_3_png.webp"
+    }
+];
 
 
+        const dealsGrid = document.getElementById("deals-grid");
 
-
-
-
-
-
-
-
-
-            
-            
- 
-
-        ];
-
-        const dealsGrid = document.getElementById('deals-grid');
-        const noResultsMessage = document.querySelector('.no-results');
-
-        // --- DEAL CARD GENERATOR ---
+        /* CARD HTML CREATOR */
         function createDealCard(deal) {
-            const departureCityDisplay = `${deal.origin} (${deal.originCode})`;
-            const arrivalCityDisplay = `${deal.destination} (${deal.destinationCode})`;
-
             return `
                 <a href="${deal.link}" class="deal-card">
-                    <img src="${deal.image}" alt="${deal.aircraft} Private Jet" class="card-image">
+                    <img src="${deal.image}" class="card-image">
                     <div class="card-content">
-                        <h2 class="route-info">${departureCityDisplay} &rarr; <span class="route-to">${arrivalCityDisplay}</span></h2>
-                        <p class="aircraft-details">${deal.aircraft} | ${deal.passengers} Passengers</p>
-                        <p class="deal-description" style="font-size: 14px; color: var(--text-meta); margin-bottom: 10px;">
-                            ${deal.description}
-                        </p>
-                        <p class="date-time">Departure: ${new Date(deal.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} @ ${deal.time}</p>
-                        
+                        <h2>${deal.origin} (${deal.originCode}) → ${deal.destination} (${deal.destinationCode})</h2>
+                        <p>${deal.aircraft} • ${deal.passengers} Passengers</p>
+                        <p style="color:var(--text-meta); font-size:14px;">${deal.description}</p>
+                        <p>Departure: ${deal.date} @ ${deal.time}</p>
+
                         <div class="pricing-section">
-                            <div class="savings-info">
+                            <div>
                                 ${deal.priceDisplay}
-                                <span class="savings-highlight">${deal.savings}</span>
+                                <div class="savings-highlight">${deal.savings}</div>
                             </div>
-                            <span class="enquire-btn-card">View Details / Enquire Now</span>
+                            <span class="enquire-btn-card">View Details / Enquire</span>
                         </div>
                     </div>
                 </a>
             `;
         }
 
-        // --- DEAL RENDERER ---
-        function renderDeals(dealsToRender) {
-            dealsGrid.innerHTML = ''; // Clear existing content
-            
-            if (dealsToRender.length === 0) {
-                dealsGrid.innerHTML = '<p class="no-results" style="display: block;">No Empty Leg deals match your criteria. Please try broadening your search.</p>';
-                return;
-            }
-
-            const html = dealsToRender.map(createDealCard).join('');
-            dealsGrid.innerHTML = html;
+        /* RENDER ALL DEALS */
+        function renderDeals(list) {
+            dealsGrid.innerHTML = list.map(createDealCard).join("");
         }
 
-        // --- FILTER LOGIC (Updated to remove Aircraft Type filter) ---
+        /* FILTER LOGIC */
         function filterDeals() {
-            const departure = document.getElementById('departure-filter').value.trim().toLowerCase();
-            const arrival = document.getElementById('arrival-filter').value.trim().toLowerCase();
-            const dateInput = document.getElementById('date-filter').value;
-            
-            const filtered = allDeals.filter(deal => {
-                const matchOrigin = !departure || 
-                                    deal.origin.toLowerCase().includes(departure) || 
-                                    deal.originCode.toLowerCase().includes(departure);
+            const d = document.getElementById("departure-filter").value.toLowerCase();
+            const a = document.getElementById("arrival-filter").value.toLowerCase();
+            const date = document.getElementById("date-filter").value;
 
-                const matchDestination = !arrival || 
-                                         deal.destination.toLowerCase().includes(arrival) || 
-                                         deal.destinationCode.toLowerCase().includes(arrival);
-
-                const matchDate = !dateInput || deal.date === dateInput;
-                
-                // Aircraft type filter logic removed
-                return matchOrigin && matchDestination && matchDate;
-            });
+            const filtered = allDeals.filter(deal =>
+                (!d || deal.origin.toLowerCase().includes(d) || deal.originCode.toLowerCase().includes(d)) &&
+                (!a || deal.destination.toLowerCase().includes(a) || deal.destinationCode.toLowerCase().includes(a)) &&
+                (!date || deal.date === date)
+            );
 
             renderDeals(filtered);
         }
 
-        // --- RESET LOGIC (Updated to remove Aircraft Type filter) ---
         function resetFilters() {
-            document.getElementById('departure-filter').value = '';
-            document.getElementById('arrival-filter').value = '';
-            document.getElementById('date-filter').value = '';
-            // Aircraft type filter reset removed
+            document.getElementById("departure-filter").value = "";
+            document.getElementById("arrival-filter").value = "";
+            document.getElementById("date-filter").value = "";
             renderDeals(allDeals);
         }
 
-
-        // --- INITIALIZATION ---
-        // Render all deals when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            renderDeals(allDeals);
-        });
+        /* INITIAL LOAD */
+        document.addEventListener("DOMContentLoaded", () => renderDeals(allDeals));
 
     </script>
+
 </body>
 </html>

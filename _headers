@@ -1,6 +1,23 @@
-/* 
-  Cache-Control: public, max-age=604800
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin-when-cross-origin
+/*
+  Strict Transport Security
+  Forces HTTPS across the entire website
+*/
+Strict-Transport-Security: max-age=31536000;
+
+/*
+  Security Headers
+*/
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+X-XSS-Protection: 1; mode=block
+
+/*
+  CORS
+*/
+Access-Control-Allow-Origin: *
+
+/*
+  Caching
+*/
+Cache-Control: public,max-age=604800,immutable

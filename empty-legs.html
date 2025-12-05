@@ -242,6 +242,98 @@
     color: var(--interactive-hover) !important;
     text-decoration: underline !important;
 }
+/* ============================
+   PREMIUM CONTACT CTA STYLING
+   ============================ */
+
+.contact-cta {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.contact-cta-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.contact-cta-info {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* CONTACT LINKS LAYOUT */
+.contact-links-group {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* TEXT + ICON STYLING */
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--interactive-base);
+    font-size: 18px;
+    font-weight: 450;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.contact-link i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--interactive-base);
+    transition: color 0.2s ease;
+}
+
+/* HOVER STATE */
+.contact-link:hover {
+    color: var(--interactive-hover);
+}
+
+.contact-link:hover i {
+    color: var(--interactive-hover);
+}
+
+/* BUTTON BELOW CONTACT SECTION */
+.contact-cta .btn-primary {
+    font-size: 16px;
+    padding: 14px 26px;
+    border: 1px solid var(--interactive-base);
+    background: transparent;
+    color: var(--interactive-base);
+    transition: all 0.2s ease;
+}
+
+.contact-cta .btn-primary:hover {
+    background: var(--interactive-base);
+    color: var(--bg-primary);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 640px) {
+    .contact-cta-title {
+        font-size: 26px;
+    }
+
+    .contact-cta-info {
+        font-size: 16px;
+    }
+
+    .contact-link {
+        font-size: 16px;
+    }
+}
 
         
         
